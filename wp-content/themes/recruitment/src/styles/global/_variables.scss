@@ -1,0 +1,80 @@
+// Font Family
+$primaryFont:  'Source Sans Pro', sans-serif;
+
+//  primary
+$lp-primary: #0a192f;
+
+//  hover
+$lp-hover: #0693e3;
+
+$lp-light-blue: #add8e6;
+$lp-light-gray: #d3d3d3;
+
+//  button
+$lp-btn-black: rgba(23, 26, 32, 1);
+$lp-btn-bg-color: linear-gradient(90deg, rgb(0, 0, 98) 28%, rgba(0, 119, 204) 87%);
+$lp-card-bg-color: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+
+// Other Colors
+// Additional Colors - https://chir.ag/projects/name-that-color/#7A7A7A
+$black: #0b0c13;
+$white: #fff;
+$gray: #cfd0d3;
+$lp-slate: #8892b0;
+$light-gray: #ededed;
+$badge-bg-gray: #b5b5b5;
+
+$lightGray: #f2fcff;
+$dark-gray: #686a7a;
+$darkGray: #686a7a;
+$light-blue: #ddf1f6;
+$LightBlue: #ddf1f6;
+$darker-Blue: #121d42;
+$darkerBlue: #121d42;
+$spun-pearl: #afb1be;
+$borderBoMenu: #bdc1c9;
+
+// Boxshadow
+$boxshadow-black: rgba(0, 0, 0, 0.16);
+$boxshadow-for-nav: rgb(0 0 0 / 10%);
+$boxshadow-bg-dropdown: rgba(0, 0, 0, 0.626);
+$boxshadow-bg-img: rgba(11, 12, 19, 0.65);
+$boxshadow-for-porftolio: rgba(0, 0, 0, 0.2);
+
+// Filters
+$robinEggBluefilter: brightness(0) saturate(100%) invert(65%) sepia(48%) saturate(5085%) hue-rotate(147deg)
+  brightness(96%) contrast(101%);
+$imgHover: sepia(100%) hue-rotate(190deg) saturate(500%);
+
+// Media query breakpoints
+$breakpoints: (
+  "xxs": 351px,
+  "xsm": 479px,
+  "sm": 576px,
+  "msm": 675px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+  "xxxl": 1600px,
+  "xxxxl": 1900px,
+);
+
+// Padding
+$containerHorizPad: 3em;
+$containerVertPad: 7em;
+$containerLgHorizPad: 2em;
+$containerLgVertPad: 5em;
+$containerMdHorizPad: 1.5em;
+$containerMdVertPad: 3em;
+
+// Container Widths
+$containerMaxWidth: 1240px;
+$containerNarrowMaxWidth: 900px;
+$containerNarrowSmallerMaxWidth: 600px;
+$containerWideMaxWidth: 1440px;
+
+$headerHeight: 121px;
+$headerScrollHeight: 70px;
+$headerHeightTablet: 59px;
+$headerHeightMobile: 54px;
