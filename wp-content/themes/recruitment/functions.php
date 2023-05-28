@@ -7,39 +7,28 @@
     External Modules/Files
 \*------------------------------------*/
 
-// require_once('inc/acf.php');
-// require_once('blocks/index.php');
+require_once('inc/acf.php');
+require_once('blocks/index.php');
 
 /*------------------------------------*\
     Theme Support
 \*------------------------------------*/
 add_theme_support('custom-header');
 
+
 // Include the WP_Customize_Control class
 require_once ABSPATH . 'wp-includes/class-wp-customize-control.php';
 
 function recruitment_setup()
 {
-    // Add Theme Support
 
     register_nav_menus(array(
         'primary' => 'primary',
-        // 'main-menu' => 'Main Menu',
-        // 'footer-menu' => 'Footer Menu',
-        // 'contact-us' => 'Contact Us',
-        // 'social-media' => 'Social Media'
+        'footer-menu' => 'Footer Menu',
     ));
 }
 
 add_action('after_setup_theme', 'recruitment_setup');
-
-// Futered image support for portfolio post type
-// function add_portfolio_featured_image()
-// {
-//     add_theme_support('post-thumbnails', array('portfolio'));
-// }
-// add_action('after_setup_theme', 'add_portfolio_featured_image');
-
 
 /*------------------------------------*\
     Functions
@@ -52,11 +41,6 @@ function recruitment_scripts()
         wp_register_script('recruitment', get_template_directory_uri() . '/dist/js/scripts.min.js', array('jquery'), '', true);
 
         wp_enqueue_script('recruitment');
-
-        // Load templates/portfolio.js
-        // wp_register_script('portfolio', get_template_directory_uri() . '/dist/js/portfolio.js', array('jquery'), '', true);
-
-        // wp_enqueue_script('portfolio');
     }
 }
 add_action('wp_enqueue_scripts', 'recruitment_scripts');
@@ -105,24 +89,31 @@ function remove_admin_bar()
 }
 
 // Serve responsive images for ACF images
-// function responsive_image($image_id, $max_width = false)
-// {
-//     if ($image_id != '') {
+function responsive_image($image_id, $max_width = false)
+{
+    if ($image_id != '') {
 
-//         // Get image full width
-//         $image_width = wp_get_attachment_image_src($image_id, 'full')[1];
-//         $image_src = wp_get_attachment_image_url($image_id, 'full');
-//         $image_srcset = wp_get_attachment_image_srcset($image_id);
+        // Get image full width
+        $image_width = wp_get_attachment_image_src($image_id, 'full')[1];
+        $image_src = wp_get_attachment_image_url($image_id, 'full');
+        $image_srcset = wp_get_attachment_image_srcset($image_id);
 
-//         // Include sizes attribute if image has max width
-//         if ($max_width) {
-//             $image_max_width = ' sizes="(max-width: ' . $image_width . 'px) 100vw, ' . $image_width . 'px"';
-//         } else {
-//             $image_max_width = '';
-//         }
-//         echo 'src="' . $image_src . '" srcset="' . $image_srcset . '"' . $image_max_width;
-//     }
-// }
+        // Include sizes attribute if image has max width
+        if ($max_width) {
+            $image_max_width = ' sizes="(max-width: ' . $image_width . 'px) 100vw, ' . $image_width . 'px"';
+        } else {
+            $image_max_width = '';
+        }
+        echo 'src="' . $image_src . '" srcset="' . $image_srcset . '"' . $image_max_width;
+    }
+}
+
+// Add custom note for custom header image upload
+function recruitment_custom_header_text($wp_customize)
+{
+    $wp_customize->get_section('header_image')->description = __('The recommended size for the header image is height: 95 px width: 92 px.', 'recruitment');
+}
+add_action('customize_register', 'recruitment_custom_header_text');
 
 /*------------------------------------*\
     Actions + Filters + ShortCodes
@@ -144,319 +135,6 @@ add_filter('clean_url', 'add_async_forscript', 11, 1);
 remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
 
-/*------------------------------------*\
-    Custom Post Types
-\*------------------------------------*/
-
-// function create_post_types()
-// {
-//     register_post_type(
-//         'branches', // Register Custom Post Type
-//         array(
-//             'labels' => array(
-//                 'name' => 'Branches', // Rename these to suit
-//                 'singular_name' => 'Branch',
-//                 'add_new' => 'Add New',
-//                 'add_new_item' => 'Add New Branch',
-//                 'edit' => 'Edit',
-//                 'edit_item' => 'Edit Branch',
-//                 'new_item' => 'New Branch',
-//                 'view' => 'View',
-//                 'view_item' => 'View Branch',
-//                 'search_items' => 'Search Branches',
-//                 'not_found' => 'No Branches found',
-//                 'not_found_in_trash' => 'No Branches found in Trash'
-//             ),
-//             'public' => true,
-//             'publicly_queryable' => false,
-//             'rewrite' => true,
-//             'hierarchical' => true,
-//             'has_archive' => true,
-//             'show_in_rest' => true, // Enable Block Editor
-//             'supports' => array(),
-//             'taxonomies' => array(),
-//             'menu_icon' => 'dashicons-location',
-//             'can_export' => true, // Allows export in Tools > Export
-//         )
-//     );
-// }
-
-// function create_taxonomies()
-// {
-//     register_taxonomy(
-//         'states',
-//         'branches',
-//         array(
-//             'labels' => array(
-//                 'name' => 'States',
-//                 'singular_name' => 'State',
-//                 'add_new' => 'Add New',
-//                 'add_new_item' => 'Add New State',
-//                 'edit' => 'Edit',
-//                 'edit_item' => 'Edit State',
-//                 'new_item' => 'New State',
-//                 'view' => 'View',
-//                 'view_item' => 'View State',
-//                 'search_items' => 'Search States',
-//                 'not_found' => 'No States found',
-//                 'not_found_in_trash' => 'No States found in Trash'
-//             ),
-//             'hierarchical' => true,
-//             'show_in_rest' => true
-//         )
-//     );
-
-//     register_taxonomy(
-//         'regions',
-//         'branches',
-//         array(
-//             'labels' => array(
-//                 'name' => 'Regions',
-//                 'singular_name' => 'Region',
-//                 'add_new' => 'Add New',
-//                 'add_new_item' => 'Add New Region',
-//                 'edit' => 'Edit',
-//                 'edit_item' => 'Edit Region',
-//                 'new_item' => 'New Region',
-//                 'view' => 'View',
-//                 'view_item' => 'View Region',
-//                 'search_items' => 'Search Regions',
-//                 'not_found' => 'No Regions found',
-//                 'not_found_in_trash' => 'No Regions found in Trash'
-//             ),
-//             'hierarchical' => true,
-//             'show_in_rest' => true
-//         )
-//     );
-// }
-
-
-// /*------------------------------------*\
-//     Custom Post Types Portfolio
-// \*------------------------------------*/
-
-// function portfolio_post_type()
-// {
-//     register_post_type(
-//         'portfolio',
-//         array(
-//             'labels' => array(
-//                 'name' => __('Portfolio'),
-//                 'singular_name' => __('Portfolio Item')
-//             ),
-//             'public' => true,
-//             'has_archive' => true,
-//             'rewrite' => array('slug' => 'portfolio'),
-//             'taxonomies' => array('category'),
-//             'supports' => array('title', 'editor', 'thumbnail')
-//         )
-//     );
-// }
-// add_action('init', 'portfolio_post_type');
-
-// // Remove Add Media Button
-
-// function remove_add_media_button($post_type)
-// {
-//     global $current_screen;
-//     if ($current_screen->post_type == 'portfolio') {
-//         remove_action('media_buttons', 'media_buttons');
-//     }
-//     if ($post_type === 'portfolio') {
-//         $screen = get_current_screen();
-//         if (is_object($screen) && $screen->id == 'portfolio') {
-//             remove_meta_box('postimagediv', 'portfolio', 'side');
-//             add_meta_box('postimagediv', __('Card Image'), 'post_thumbnail_meta_box', 'portfolio', 'side', 'low');
-//         }
-//     }
-// }
-// add_action('add_meta_boxes', 'remove_add_media_button');
-
-
-
-
-
-/*------------------------------------*\
-    Gutenberg Patterns
-\*------------------------------------*/
-
-// function register_patterns_category() {
-//     register_block_pattern_category(
-//         'levani-papashvili',
-//         array( 'label' => __( 'Levani Papashvili', 'levani-papashvili' ) )
-//     );
-// }
-// add_action( 'init', 'register_patterns_category' );
-
-// function register_patterns() {
-//     register_block_pattern(
-//         'patterns/home',
-//         array(
-//             'title'       => 'Home',
-//             'categories'  => array('levani-papashvili'),
-//             'description' => 'Adds all the blocks used on the Home page',
-//             'content'    => '
-//                 <!-- wp:levani-papashvili/home-hero-section /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/educational-program-landing',
-//         array(
-//             'title'       => 'Education Program Landing',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on an Education Program Landing page',
-//             'content'     => '
-//                 <!-- wp:levani-papashvili/side-by-side /-->
-//                 <!-- wp:levani-papashvili/left-image-right-text /-->
-//                 <!-- wp:levani-papashvili/accordion /-->
-//                 <!-- wp:levani-papashvili/full-width-cta /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/educational-program-individual',
-//         array(
-//             'title'       => 'Education Program Individual',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on an Education Program Individual page',
-//             'content'     => '
-//                 <!-- wp:levani-papashvili/content-over-image /-->
-//                 <!-- wp:levani-papashvili/basic-full-width /-->
-//                 <!-- wp:core/separator /-->
-//                 <!-- wp:levani-papashvili/headline-over-grid /-->
-//                 <!-- wp:core/separator /-->
-//                 <!-- wp:imagely/nextgen-gallery /-->
-//                 <!-- wp:core/separator /-->
-//                 <!-- wp:levani-papashvili/table-or-chart /-->
-//                 <!-- wp:core/separator /-->
-//                 <!-- wp:levani-papashvili/accordion /-->
-//                 <!-- wp:levani-papashvili/full-width-cta /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/membership',
-//         array(
-//             'title'       => 'Membership',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on a Membership page',
-//             'content'     => '
-//                 <!-- wp:core/spacer /-->
-//                 <!-- wp:levani-papashvili/left-heading-right-text /-->
-//                 <!-- wp:levani-papashvili/content-over-image /-->
-//                 <!-- wp:levani-papashvili/single-left-image-right-text /-->
-//                 <!-- wp:levani-papashvili/bullet-list /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/contact',
-//         array(
-//             'title'       => 'Contact',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on a Contact page',
-//             'content'     => '
-//                 <!-- wp:levani-papashvili/simple-form /-->
-//                 <!-- wp:levani-papashvili/left-text-right-embed /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/support',
-//         array(
-//             'title'       => 'Support',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on a Support page',
-//             'content'     => '
-//                 <!-- wp:levani-papashvili/content-over-image /-->
-//                 <!-- wp:levani-papashvili/side-scrolling-items /-->
-//                 <!-- wp:levani-papashvili/accordion /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/about',
-//         array(
-//             'title'       => 'About',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on an About page',
-//             'content'     => '
-//                 <!-- wp:levani-papashvili/content-over-image /-->
-//                 <!-- wp:levani-papashvili/left-heading-right-text /-->
-//                 <!-- wp:levani-papashvili/images-above-content /-->
-//                 <!-- wp:levani-papashvili/accordion /-->
-//                 <!-- wp:levani-papashvili/left-content-right-image /-->
-//                 <!-- wp:levani-papashvili/full-width-content-above-image /-->
-//                 <!-- wp:levani-papashvili/full-width-cta /-->
-//                 <!-- wp:core/spacer /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/donate',
-//         array(
-//             'title'       => 'Donate',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on a Donate page',
-//             'content'     => '
-//                 <!-- wp:levani-papashvili/form-and-image /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/branch-home',
-//         array(
-//             'title'       => 'Branch Home',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on a Branch Home page',
-//             'content'     => '
-//                 <!-- wp:levani-papashvili/content-over-image /-->
-//                 <!-- wp:levani-papashvili/full-width-cta /-->
-//                 <!-- wp:core/shortcode -->[tribe_events view="summary"]<!-- /wp:core/shortcode -->
-//                 <!-- wp:levani-papashvili/side-by-side /-->
-//                 <!-- wp:levani-papashvili/full-width-cta /-->
-//                 <!-- wp:core/spacer /-->
-//                 <!-- wp:imagely/nextgen-gallery /-->
-//             '
-//         )
-//     );
-
-//     register_block_pattern(
-//         'patterns/news-events',
-//         array(
-//             'title'       => 'News & Events',
-//             'categories'  => array('levani-papashvili'),
-//             'keywords'    => array('levani-papashvili','pattern'),
-//             'description' => 'Adds all the blocks used on a News & Events page',
-//             'content'     => '
-//                 <!-- wp:core/spacer /-->
-//                 <!-- wp:levani-papashvili/single-left-image-right-text /-->
-//                 <!-- wp:events-calendar-shortcode/block /-->
-//                 <!-- wp:levani-papashvili/full-width-cta /-->
-//             '
-//         )
-//     );
-
-// }
-// add_action( 'init', 'register_patterns' );
-
 
 
 
@@ -465,7 +143,7 @@ function custom_theme_customizer($wp_customize)
 {
     // Add custom section for header settings
     $wp_customize->add_section('custom_header_section', array(
-        'title' => 'Header Settings',
+        'title' => 'Add Header Buttons',
         'priority' => 30,
     ));
 

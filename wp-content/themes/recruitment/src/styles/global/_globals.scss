@@ -27,29 +27,6 @@ body {
 	}
 }
 
-.dark-mode {
-	background-color: $lp-primary;
-	color: $white;
-
-	.heading-1,
-	.heading-2,
-	.body-1 {
-		color: $white;
-	}
-
-	.buttons {
-		.btn-solid,
-		.btn-small {
-			color: $white;
-			border: 1px solid $white;
-
-			&:hover {
-				background: $white;
-				color: $lp-primary;
-			}
-		}
-	}
-}
 
 h1,
 .heading-1 {
@@ -99,7 +76,7 @@ ol {
 }
 
 a {
-	// color: $esu-blue;
+	
 	font-weight: 700;
 	text-decoration: none;
 }
@@ -184,40 +161,5 @@ section {
 		.wp-block-separator {
 			margin: 0;
 		}
-	}
-}
-
-.nf-form-cont form {
-	.nf-form-fields-required {
-		display: none;
-	}
-
-	.nf-field-label {
-		margin-bottom: 0.25em;
-
-		label {
-			font-size: 0.9em;
-		}
-	}
-
-	input[type="text"],
-	input[type="email"],
-	textarea {
-		background: $white;
-		border: 1px solid $gray;
-		font-size: 1em;
-		line-height: 1;
-		padding: 8px 12px;
-		transition: all 200ms ease;
-
-		&:hover,
-		&:focus {
-			// border-color: $esu-blue;
-		}
-	}
-
-	input[type="button"] {
-		@extend .btn;
-		@extend .btn-solid;
 	}
 }

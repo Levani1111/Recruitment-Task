@@ -1,5 +1,5 @@
 %heading-1 {
-    color: $lp-primary;
+    color: $lucky-point;
     font-size: 3em;
     font-weight: 700;
     line-height: 1.2;
@@ -19,7 +19,7 @@
 }
 
 %heading-2 {
-    color:  $lp-primary;
+    color:  $lucky-point;
     font-size: 2em;
     font-weight: 700;
     line-height: 1.2;
@@ -39,9 +39,9 @@
 }
 
 %heading-3 {
-    color: $black;
+    color: $lucky-point;
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.3;
     margin-bottom: 1em;
 
@@ -55,9 +55,9 @@
 }
 
 %heading-4 {
-    color: $black;
+    color: $lucky-point;
     font-size: 1.3em;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.5em;
     margin-top: 1em;
@@ -71,131 +71,21 @@
     }
 }
 
-%heading-5 {
-    color: $black;
-    font-size: 1.1em;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    line-height: 1.3;
-    margin-bottom: 1em;
-    text-transform: uppercase;
+%heading-5 {}
 
-    @include breakpoint-max('lg') {
-        font-size: 1em;
-    }
-}
-
-%heading-6 {
-    color: $black;
-    font-size: 1em;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    line-height: 1.3;
-    margin-bottom: 0.5em;
-    text-transform: uppercase;
-
-    @include breakpoint-max('lg') {
-        font-size: 0.9em;
-    }
-}
+%heading-6 {}
 
 %body-1 {
-    color: $black;
+    color: $gray;
     font-size: 1em;
     font-weight: 300;
     line-height: 1.5;
     margin-bottom: 1em;
 }
 
-%btn {
-    border: none; 
-    border-radius: 6px; 
-    font-size: 15px; 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    // height: 36px;
-    margin-left: 8px; 
-    margin-right: 6px; 
-    min-width: 120px; 
-    padding: 0 16px 0 16px; 
-    cursor: pointer; 
-     
-    @include breakpoint-max('lg') {
-        font-size: 0.9em
-    }
+%btn {}
 
-    @include breakpoint-max('md') {
-        padding: 0.75em 1.25em;
-    }
-
-    @include breakpoint-max('sm') {
-        min-width: 85px;
-    }
-      &.btn-solid {
-        border: 1px solid $black;
-        color: $black;
-
-        &:hover {
-            outline: none;
-            border: 1px solid $white;
-            background: $lp-primary;
-            color: $white;
-        }
-    }
-
-    &.btn-transparent-dark {
-        background: transparent;
-        border: 1px solid $black;
-        // color: $esu-blue;
-
-        &:hover {
-            // background: $esu-dark-blue;
-            // border-color: $esu-dark-blue;
-            color: $white;
-        }
-    }
-
-    &.btn-transparent-light {
-        background: transparent;
-        border: 3px solid $white;
-        color: $white;
-
-        &:hover {
-            // background: $esu-bright-blue;
-            // border-color: $esu-bright-blue;
-        }
-    }
-
-    &.btn-small {
-        font-size: 0.85em;
-        padding: 0.75em 1em;
-
-        @include breakpoint-max('lg') {
-            font-size: 0.8em
-        }
-
-        @include breakpoint-max('md') {
-            font-size: 0.75em;
-        }
-    }
-}
-
-%caps-link {
-    // color: $esu-blue;
-    font-size: 1.2em;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-
-    @include breakpoint-max('lg') {
-        font-size: 1.1em
-    }
-
-    @include breakpoint-max('xsm') {
-        font-size: 1em;
-    }
-}
+%caps-link {}
 
 %input-field {}
 

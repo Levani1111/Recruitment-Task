@@ -5,15 +5,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 50px;
-    margin: 0 auto;
-    max-width: 1500px;
-    width: 100%;
+    padding: 10px;
 
     @include breakpoint-max("lg") {
-      padding: 13px 16px;
+      padding: 0;
       margin: 0 auto;
-      max-width: 1500px;
       width: 100%;
       display: flow-root;
     }
@@ -22,21 +18,20 @@
   #site-header {
     display: flex;
     align-items: center;
-    // margin-right: 130px;
 
     @include breakpoint-max("lg") {
       margin-right: 0;
     }
 
     a {
-      font-family: "Dongle";
       font-style: normal;
       font-weight: 700;
-      font-size: 30px;
+      font-size: 20px;
       text-transform: uppercase;
-      color: #000000;
+      color: $black;
       line-height: 75px;
     }
+
     img {
       display: block;
 
@@ -60,111 +55,174 @@
   .main-nav {
     display: flex;
     align-items: center;
-    gap: 40px;
 
-    @include breakpoint-max("sm") {
+    @include breakpoint-max("lg") {
       gap: 0;
+      padding: 24px 16px;
     }
-  
+
     .nav-menu {
       list-style: none;
       display: flex;
       margin: 0;
       padding: 0;
-      gap: 15px;
-  
+      padding-left: 100px;
+      gap: 13px;
+
+      @include breakpoint-max("lg") {
+        flex-wrap: wrap;
+      }
+
       li {
         position: relative;
-  
+
         a {
           display: flex;
           align-items: center;
           text-decoration: none;
-          color: #251F6E;
+          color: $lucky-point;
           position: relative;
           margin-right: 10px;
-          
+          padding: 20px 0;
+
           &::before {
             content: "";
             position: absolute;
             width: 100%;
             height: 2px;
-            bottom: -2px;
-            background-color: #251F6E;
+            bottom: -8px;
+            background-color: $portage;
             transform: scaleX(0);
             transition: transform 200ms ease;
             z-index: -1;
+
+            @include breakpoint-max("lg") {
+              display: none;
+            }
           }
-          
+
           &:hover {
             &::before {
               transform: scaleX(1);
             }
-            
+
             &:after {
               transform: rotate(180deg);
             }
           }
-          
+
+          &:hover,
+          &:active {
+            color: $portage;
+          }
+
           &:after {
             font-family: "IcoFont";
             display: inline-flex;
-            content: "\eab2";
+            content: "\eacb";
             margin-left: 5px;
             border: 0;
+            color: $portage;
             font-size: 15px;
             position: relative;
             transition-property: transform;
             transition-duration: 200ms;
             transition-timing-function: ease;
           }
+
+          @include breakpoint-max("lg") {
+            justify-content: space-between;
+          }
+        }
+
+        .sub-menu {
+          li {
+            a {
+              padding: 8px 0;
+            }
+          }
         }
       }
-  
+
       li {
         position: relative;
-  
+
         &:hover {
           > .sub-menu {
             display: block;
           }
         }
       }
-    }
-  
-    .sub-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      padding: 10px;
-      z-index: 999;
-  
-      li {
-        margin-bottom: 10px;
-        list-style: none;
+
+      .sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: $background-mobile;
+        padding: 0;
+        z-index: 999;
+
+        li {
+          margin-bottom: 5px;
+          list-style: none;
+
+          a {
+            &:hover {
+              &::before {
+                transform: scaleX(0);
+              }
+            }
+          }
+        }
+
+        @include breakpoint-max("lg") {
+          position: static;
+          display: none;
+          margin-left: 20px;
+        }
+
+        li a::after {
+          content: none;
+        }
+      }
+
+      @include breakpoint-max("lg") {
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 16px;
+        background: $background-mobile;
+        backdrop-filter: blur(8px);
+        border-radius: 0;
       }
     }
-  
+
     @include breakpoint-max("lg") {
       position: relative;
-  
+
       .nav-menu {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        padding: 10px;
-  
-        li {
+        padding: 24px 16px;
+
+        li:not(:last-child, .sub-menu li) {
           margin-right: 0;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
+          border-bottom: 1px solid $portage;
         }
       }
-  
+
       .menu-icon {
         display: flex;
         align-items: center;
@@ -173,10 +231,10 @@
         font-size: 25px;
       }
     }
-  
+
     label {
       display: none;
-  
+
       @include breakpoint-max("lg") {
         display: block;
       }
@@ -205,12 +263,13 @@
 
     a {
       padding: 7px 15px;
-      background: #6371f4;
+      background: $portage;
       border-radius: 8px;
-      color: #fff;
+      color: $white;
       text-decoration: none;
       font-weight: 400;
       white-space: nowrap;
+      font-size: 12px;
 
       @include breakpoint-max("sm") {
         padding: 7px 7px;
