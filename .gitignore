@@ -1,38 +1,24 @@
-# Ignore everything in the root except the "wp-content" directory
-/*
-!.gitignore
-!wp-content/
-
-# Ignore everything in the "wp-content" directory except specific directories and files
-wp-content/*
-!wp-content/themes/
-!wp-content/plugins/
-!wp-content/uploads/
-!wp-content/mu-plugins/
-!wp-content/.htaccess
-
-# Ignore WordPress core files
-wp-admin/
-wp-includes/
-
-# Ignore specific files
-wp-config.php
-.htaccess
-
-# Ignore logs, caches, and backup files
-*.log
-*.sql
+.svn
+.cvs
 *.bak
 *.swp
-
-# Ignore development and build tools
-/node_modules/
-/vendor/
-Gruntfile.js
-gulpfile.js
-package.json
-package-lock.json
-
-# Ignore OS generated files
-.DS_Store
 Thumbs.db
+.vscode
+
+# wordpress specific
+/wp/
+/vendor/
+/wp-content/uploads
+/wp-content/plugins
+/wp-content/mu-plugins
+/wp-content/themes/**/dist
+/node_modules/
+
+.htaccess
+.DS_Store
+wp-config.php
+npm-debug.log
+
+/*.sql
+/database/*.sql
+!/database/setup.sql
