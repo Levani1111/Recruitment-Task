@@ -28,9 +28,14 @@ wp-config.php
 # Ignore development and build tools
 /node_modules/
 /vendor/
-Gruntfile.js
-gulpfile.js
 package-lock.json
+
+# do not ignore  files
+!.gitignore
+!readme.md
+!package.json
+!composer.json
+!composer-postinstall.sh
 
 # Ignore OS generated files
 .DS_Store
