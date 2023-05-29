@@ -21,7 +21,7 @@ wp-config.php
 
 # Ignore logs, caches, and backup files
 *.log
-*.sql
+# *.sql
 *.bak
 *.swp
 
@@ -30,12 +30,14 @@ wp-config.php
 /vendor/
 package-lock.json
 
-# do not ignore  files
+# do not ignore  files floder
 !.gitignore
 !readme.md
 !package.json
 !composer.json
 !composer-postinstall.sh
+!database/mysql.sql
+
 
 # Ignore OS generated files
 .DS_Store
