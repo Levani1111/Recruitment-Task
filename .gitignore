@@ -10,6 +10,7 @@ wp-content/*
 !wp-content/uploads/
 !wp-content/mu-plugins/
 !wp-content/.htaccess
+!wp-content/database/mysql.sql/recruitment.zip
 
 # Ignore WordPress core files
 wp-admin/
@@ -30,13 +31,12 @@ wp-config.php
 /vendor/
 package-lock.json
 
-# do not ignore  files floder
+# do not ignore files floder
 !.gitignore
 !readme.md
 !package.json
 !composer.json
 !composer-postinstall.sh
-!database/mysql.sql
 
 
 # Ignore OS generated files
