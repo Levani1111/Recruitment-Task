@@ -61,14 +61,14 @@
                 background-position: center;
                 background-size: cover;
 
-                // @include breakpoint-max("sm") {
-                //     height: 400px;
-                //     padding-bottom: 100.25%;
-                //     background-repeat: no-repeat;
-                //     background-position: center;
-                //     background-size: cover;
-                    
-                // }
+                @include breakpoint-max("lg") {
+                    background-size: auto 100%;
+                }
+
+                @include breakpoint-max("sm") {
+                    height: 133.5vw;
+                    padding: 0;
+                }
 
                 img {
                     width: 100%;
@@ -102,6 +102,10 @@
             margin-bottom: 1em;
             display: flex;
 
+            @include breakpoint-max("xxl") {
+                padding: 0;
+            }
+
             &::before,
             &::after {
                 content: "";
@@ -122,12 +126,15 @@
         }
 
         .body-1 {
+            display: flex;
             text-align: center;
             color: $gray;
             padding: 0 17em;
             margin-bottom: 2em;
 
-            display: flex;
+            @include breakpoint-max("xxl") {
+                padding: 0;
+            }
 
             &::before,
             &::after {
@@ -153,8 +160,9 @@
         display: flex;
         justify-content: center;
 
-        @include breakpoint-max("lg") {
+        @include breakpoint-max("sm") {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
 
             &.box-section::-webkit-scrollbar {
                 display: none;
@@ -168,24 +176,29 @@
 
         .section-container {
             display: flex;
+            align-items: center;
             gap: 80px;
 
             @include breakpoint-max("lg") {
+                gap: 20px;
+            }
+
+            @include breakpoint-max("sm") {
                 gap: 10px;
                 margin-left: 480px;
             }
 
             .box {
                 width: 248.98px;
-                height: 359.94px;
+                height: 386.94px;
                 border-radius: 24px;
 
                 .box-image {
                     width: 100%;
-                    height: 0;
-                    padding: 100px;
+                    padding: 110px;
                     background-repeat: no-repeat;
                     background-position: center;
+
 
                     img {
                         width: 100%;

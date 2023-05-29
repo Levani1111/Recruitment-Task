@@ -131,7 +131,7 @@
             "name": "on_off",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Use Checkbox to show or hide the footer.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

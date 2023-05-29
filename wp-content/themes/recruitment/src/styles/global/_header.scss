@@ -55,6 +55,7 @@
   .main-nav {
     display: flex;
     align-items: center;
+    gap: 9px;
 
     @include breakpoint-max("lg") {
       gap: 0;

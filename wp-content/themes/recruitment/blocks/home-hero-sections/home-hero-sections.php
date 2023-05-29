@@ -60,7 +60,7 @@ $section_two_boxes = get_field('section_two_boxes');
                             <?php $box_title = get_sub_field('box_title'); ?>
                             <?php $box_subtitle = get_sub_field('box_subtitle'); ?>
                             <?php $border_color = get_sub_field('border_color'); ?>
-                            <div class="box" <?php if ($border_color) : ?>style="border: 4px solid <?php the_sub_field('border_color'); ?>" <?php endif; ?>>
+                            <div class="box" <?php if ($border_color) : ?>style="border: 2px solid <?php the_sub_field('border_color'); ?>" <?php endif; ?>>
                                 <?php if ($box_image) : ?>
                                     <div class="box-image" style="background-image: url('<?= $box_image['url']; ?>');"></div>
                                 <?php endif; ?>
