@@ -2,9 +2,11 @@
 
 ### Nesesary Plugin for this theme
 - [Advanced Custom Fields PRO](https://www.advancedcustomfields.com/)
-<b>Note:</b> Without Advanced Custom Fields PRO plugin the theme will not work properly.
 
-#### Dowlnoad the zip file from  <strong>database folder<strong> or you can download from the github repository.
+Note: Without Advanced Custom Fields PRO plugin the theme will not work properly.
+
+### Theme Installation
+Dowlnoad the zip file from  database folder or you can download from the github repository.
 Install the theme in your Wordpress instance and activate it.
 
 ## Theme Instructions
@@ -25,7 +27,7 @@ Install the theme in your Wordpress instance and activate it.
 ##### To add footer menu
 - Go to Appearance > Menus and create a new menu assigning it to the footer menu location.
 - Go to woedpress dashboard > Very bottom left corner > you will see a settings icon > click on it > It'll takes you to footer settings > add footer items
-<b>Note:</b> The footer has an ON & OFF checkbox to show and hide the footer.
+Note: The footer has an ON & OFF checkbox to show and hide the footer.
 
 ### Home Page Instructions
 
@@ -62,7 +64,7 @@ Install the theme in your Wordpress instance and activate it.
     - `mkdir public`
     - `cd public`
     - clone the repo into the public folder
-        - *Notice the `.` at the end of the above command
+        - *Notice When you clone the repo, Plesae database folder after you have on you compuret sql file*
 - Install Composer and NPM
     - `composer install`
     - `npm install`
