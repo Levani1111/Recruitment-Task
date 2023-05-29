@@ -30,7 +30,6 @@ wp-config.php
 /vendor/
 Gruntfile.js
 gulpfile.js
-package.json
 package-lock.json
 
 # Ignore OS generated files
