@@ -6,8 +6,7 @@
 Note: Without Advanced Custom Fields PRO plugin the theme will not work properly.
 
 ### Theme Installation
-Dowlnoad the zip file [Download Zip File](.database/recruitment.zip)
-or from database folder or you can download from the github repository.
+Dowlnoad the zip file from `database` folder or you can download from the github repository.
 Install the theme in your Wordpress instance and activate it.
 
 ## Theme Instructions
