@@ -10,7 +10,6 @@ wp-content/*
 !wp-content/uploads/
 !wp-content/mu-plugins/
 !wp-content/.htaccess
-!wp-content/database/mysql.sql/recruitment.zip
 
 # Ignore WordPress core files
 wp-admin/
@@ -37,6 +36,8 @@ package-lock.json
 !package.json
 !composer.json
 !composer-postinstall.sh
+!mysql.sql
+!recruitment.zip
 
 
 # Ignore OS generated files
