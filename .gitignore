@@ -2,6 +2,7 @@
 /*
 !.gitignore
 !wp-content/
+!database/
 
 # Ignore everything in the "wp-content" directory except specific directories and files
 wp-content/*
@@ -36,8 +37,7 @@ package-lock.json
 !package.json
 !composer.json
 !composer-postinstall.sh
-!mysql.sql
-!recruitment.zip
+
 
 
 # Ignore OS generated files
