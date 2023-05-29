@@ -29,8 +29,7 @@
     "require": {
         "wordpress/wordpress": "6.2.1",
         "fancyguy/webroot-installer": "^1.1.0",
-        "advanced-custom-fields/advanced-custom-fields-pro": "6.1.6",
-        "wpackagist-plugin/wordpress-seo": "20.7"
+        "advanced-custom-fields/advanced-custom-fields-pro": "6.1.6"
     },
     "extra": {
         "webroot-dir": "wp",
