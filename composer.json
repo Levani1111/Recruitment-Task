@@ -1,48 +1,49 @@
 {
-    "name": "levani-papashvili-wordpress/levani-papashvili-wordpress",
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "wordpress/wordpress",
-                "type": "webroot",
-                "version": "6.2.1",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://wordpress.org/wordpress-6.2.1.zip"
-                },
-                "require": {
-                    "fancyguy/webroot-installer": "^1.1.0"
-                }
-            }
+  "name": "levani-papashvili-wordpress/levani-papashvili-wordpress",
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress/wordpress",
+        "type": "webroot",
+        "version": "6.5.2",
+        "dist": {
+          "type": "zip",
+          "url": "https://wordpress.org/wordpress-6.5.2.zip"
         },
-        {
-            "type": "composer",
-            "url": "https://wpackagist.org"
-        },
-        {
-            "type": "composer",
-            "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
+        "require": {
+          "fancyguy/webroot-installer": "^1.1.0",
+          "advanced-custom-fields/advanced-custom-fields-pro": "^6.2"
         }
-    ],
-    "comment": "Find names of the plugins on wpackagist.org. Any that are in the wordpress plugin directory should be there. If not, see https://roots.io/wordpress-plugins-with-composer/",
-    "require": {
-        "wordpress/wordpress": "6.2.1",
-        "fancyguy/webroot-installer": "^1.1.0",
-        "advanced-custom-fields/advanced-custom-fields-pro": "6.1.6"
+      }
     },
-    "extra": {
-        "webroot-dir": "wp",
-        "webroot-package": "wordpress/wordpress"
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
     },
-    "scripts": {
-        "post-install-cmd": "./composer-postinstall.sh"
-    },
-    "config": {
-        "allow-plugins": {
-            "pivvenit/acf-pro-installer": true,
-            "composer/installers": true,
-            "fancyguy/webroot-installer": true
-        }
+    {
+      "type": "composer",
+      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
     }
+  ],
+  "comment": "Find names of the plugins on wpackagist.org. Any that are in the wordpress plugin directory should be there. If not, see https://roots.io/wordpress-plugins-with-composer/",
+  "require": {
+    "wordpress/wordpress": "6.5.2",
+    "fancyguy/webroot-installer": "^1.1.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^6.2"
+  },
+  "extra": {
+    "webroot-dir": "wp",
+    "webroot-package": "wordpress/wordpress"
+  },
+  "scripts": {
+    "post-install-cmd": "./composer-postinstall.sh"
+  },
+  "config": {
+    "allow-plugins": {
+      "pivvenit/acf-pro-installer": true,
+      "composer/installers": true,
+      "fancyguy/webroot-installer": true
+    }
+  }
 }

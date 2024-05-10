@@ -1,5 +1,5 @@
 {
-  "name": "recruitment-wp",
+  "name": "vigocrossft-wp",
   "version": "1.0.0",
   "description": "WordPress website",
   "license": "MIT",
@@ -9,6 +9,11 @@
     "url": "https://github.com/Levani1111/Levani-Papashvili.git"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-react": "^7.24.1",
+    "@wordpress/scripts": "^27.8.0",
+    "babel-loader": "^9.1.3",
     "jshint": "^2.13.5",
     "npm-run-all": "^4.1.5",
     "sass": "^1.42.1",
@@ -16,11 +21,13 @@
   },
   "scripts": {
     "dev": "run-p watch-css",
-    "create-dist": "mkdir -p wp-content/themes/recruitment/dist/js/ && mkdir -p wp-content/themes/recruitment/dist/css/",
-    "build-css": "sass -s compressed wp-content/themes/recruitment/src/styles/:wp-content/themes/recruitment/dist/css/",
-    "watch-css": "sass -s compressed -w wp-content/themes/recruitment/src/styles/:wp-content/themes/recruitment/dist/css/",    
-    "build-js": "uglifyjs --compress --mangle -- wp-content/themes/recruitment/src/scripts/global/*.js > wp-content/themes/recruitment/dist/js/scripts.min.js",
+    "create-dist": "mkdir -p wp-content/themes/vigocrossft/dist/js/ && mkdir -p wp-content/themes/vigocrossft/dist/css/",
+    "build-css": "sass -s compressed wp-content/themes/vigocrossft/src/styles/:wp-content/themes/vigocrossft/dist/css/",
+    "watch-css": "sass -s compressed -w wp-content/themes/vigocrossft/src/styles/:wp-content/themes/vigocrossft/dist/css/",
+    "build-js": "uglifyjs wp-scripts build --compress --mangle -- wp-content/themes/vigocrossft/src/scripts/global/*.js > wp-content/themes/vigocrossft/dist/js/scripts.min.js",
     "build": "npm-run-all build-css build-js",
+    "start": "wp-scripts start",
+    "build:scripts": "webpack --config webpack.config.js",
     "postinstall": "npm-run-all create-dist build"
   },
   "engines": {

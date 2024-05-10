@@ -1,0 +1,174 @@
+
+@font-face {
+  font-family: "IBMPlexSans-BoldItalic";
+  src: local(""),
+     url("../../src/fonts/IBMPlexSans-BoldItalic.woff2") format("woff2");
+    
+}
+
+@font-face {
+  font-family: "BMPlexSans-Bold";
+  src: local(""),
+     url("../../src/fonts/BMPlexSans-Bold.otf") format("otf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSans-Text";
+  src: local(""),
+     url("../../src/fonts/IBMPlexSans-Text.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "BMPlexSans-Regular";
+  src: local(""),
+     url("../../src/fonts/BMPlexSans-Regular.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+  font-family: "IBMPlexSans-Medium";
+  src: local(""),
+     url("../../src/fonts/IBMPlexSans-Medium.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+  font-family: "IBMPlexSans-SemiBold";
+  src: local(""),
+     url("../../src/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Icofont";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local(""), url("../../src/fonts/icofont.eot") format("eot"),
+    url("../../src/fonts/icofont.woff") format("woff2"),
+    url("../../src/fonts/icofont.woff2") format("woff");
+}
+
+[class^="icofont-"],
+[class*=" icofont-"] {
+  font-family: "IcoFont" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.icofont-address-book:before {
+  content: "\eea1";
+}
+
+.icofont-building-alt:before {
+  content: "\e98a";
+}
+
+.icofont-fax:before {
+  content: "\ef26";
+}
+
+.icofont-mail-box:before {
+  content: "\ef87";
+}
+
+.icofont-instagram:before {
+  content: "\ed46";
+}
+
+.icofont-youtube-play:before {
+  content: "\ecbb";
+}
+
+.icofont-facebook:before {
+  content: "\ed37";
+}
+
+.icofont-twitter:before {
+  content: "\ed7a";
+}
+
+.icofont-linkedin:before {
+  content: "\ed4d";
+}
+
+.icofont-github:before {
+  content: "\ed3e";
+}
+
+.icofont-phone:before {
+  content: "\efbb";
+}
+
+.icofont-ui-message:before {
+  content: "\ec67";
+}
+
+.icofont-phone:before {
+  content: "\efbb";
+}
+
+.icofont-ui-message:before {
+  content: "\ec67";
+}
+
+.icofont-arrow-left:before {
+  content: "\ea5c";
+}
+
+.icofont-arrow-right:before {
+  content: "\ea5d";
+}
+
+.iconfont-search:before {
+  content: "\e9a5";
+}
+
+.icofont-thin-right:before {
+  content: "\eaca";
+}
+
+.icofont-thin-left:before {
+  content: "\eac9";
+}
+
+.icofont-check-alt:before {
+  content: "\eed6";
+}
+
+.icofont-moon:before {
+  content: "\ef9e";
+}
+
+.icofont-sun:before {
+  content: "\ee81";
+}
+
+.icofont-ui-user::before {
+  content: "\ec8e";
+}
+
+.icofont-list::before {
+  content: "\ef72";
+}
+
+.icofont-interface::before {
+  content: "\ef52";
+}

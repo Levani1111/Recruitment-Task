@@ -1,0 +1,13 @@
+{
+  "name": "recruitment/woocommerce",
+  "title": "WooCommerce",
+  "description": "This is Costom WooCommerce block to display poroducts.",
+  "style": ["file:./woocommerce-black.css"],
+  "category": "theme",
+  "icon": "dashicons dashicons-cart",
+  "keywords": ["recruitment", "WooCommerce", "Sections"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "woocommerce.php"
+  }
+}

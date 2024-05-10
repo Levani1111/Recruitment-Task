@@ -1,0 +1,13 @@
+{
+  "name": "vigocrossft/gym-locations",
+  "title": "Gym Locations",
+  "description": "This Costom gym locations",
+  "style": ["file:./gym-locations.css"],
+  "category": "theme",
+  "icon": "dashicons dashicons-location-alt",
+  "keywords": ["vigocrossft", "gym", "locations", "Sections"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "gym-locations.php"
+  }
+}

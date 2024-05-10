@@ -1,0 +1,13 @@
+{
+  "name": "vigocrossft/subscribe",
+  "title": "Subscribe",
+  "description": "This is Costom Subscribe Form",
+  "style": ["file:./subscribe.css"],
+  "category": "theme",
+  "icon": "dashicons dashicons-slides",
+  "keywords": ["vigocrossft", "subscribe", "Sections"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "subscribe.php"
+  }
+}

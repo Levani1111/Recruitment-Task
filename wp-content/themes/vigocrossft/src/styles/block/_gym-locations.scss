@@ -1,0 +1,62 @@
+.gym-locations-block {
+  .inner {
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .gym-map {
+        position: relative;
+        width: 100%;
+        height: 50em;
+        margin: 20px 0;
+      }
+
+      .title {
+        position: relative;
+        bottom: -130px;
+        z-index: 1;
+        font-size: 24px;
+        color: $black;
+        text-align: center;
+        width: 100%;
+
+        h2{
+            margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.infowindow {
+  h3 {
+    color: $black;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+  }
+
+  .gallery a img {
+    width: 85px;
+    height: 85px;
+    margin: 5px;
+  }
+}
+
+.see-more-container {
+  position: relative;
+
+  p {
+    color: $white;
+    cursor: pointer;
+    font-weight: 700;
+
+  }
+}
+
+
