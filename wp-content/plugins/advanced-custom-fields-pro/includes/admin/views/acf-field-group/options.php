@@ -17,9 +17,8 @@ if ( empty( $field_group['location'] ) ) {
 		),
 	);
 
-	$acf_use_post_type    = acf_get_post_type_from_request_args( 'add-fields' );
-	$acf_use_taxonomy     = acf_get_taxonomy_from_request_args( 'add-fields' );
-	$acf_use_options_page = acf_get_ui_options_page_from_request_args( 'add-fields' );
+	$acf_use_post_type = acf_get_post_type_from_request_args( 'add-fields' );
+	$acf_use_taxonomy  = acf_get_taxonomy_from_request_args( 'add-fields' );
 
 	if ( $acf_use_post_type && ! empty( $acf_use_post_type['post_type'] ) ) {
 		$field_group['location'] = array(
@@ -40,18 +39,6 @@ if ( empty( $field_group['location'] ) ) {
 					'param'    => 'taxonomy',
 					'operator' => '==',
 					'value'    => $acf_use_taxonomy['taxonomy'],
-				),
-			),
-		);
-	}
-
-	if ( $acf_use_options_page && ! empty( $acf_use_options_page['menu_slug'] ) ) {
-		$field_group['location'] = array(
-			array(
-				array(
-					'param'    => 'options_page',
-					'operator' => '==',
-					'value'    => $acf_use_options_page['menu_slug'],
 				),
 			),
 		);
@@ -99,7 +86,7 @@ foreach ( acf_get_combined_field_group_settings_tabs() as $tab_key => $tab_label
 			acf_render_field_wrap(
 				array(
 					'label'         => __( 'Position', 'acf' ),
-					'instructions'  => __( "'High' position not supported in the Block Editor", 'acf' ),
+					'instructions'  => '',
 					'type'          => 'button_group',
 					'name'          => 'position',
 					'prefix'        => 'acf_field_group',
@@ -110,16 +97,14 @@ foreach ( acf_get_combined_field_group_settings_tabs() as $tab_key => $tab_label
 						'side'            => __( 'Side', 'acf' ),
 					),
 					'default_value' => 'normal',
-				),
-				'div',
-				'field'
+				)
 			);
 
 
 			// label_placement
 			acf_render_field_wrap(
 				array(
-					'label'        => __( 'Label Placement', 'acf' ),
+					'label'        => __( 'Label placement', 'acf' ),
 					'instructions' => '',
 					'type'         => 'button_group',
 					'name'         => 'label_placement',
@@ -136,7 +121,7 @@ foreach ( acf_get_combined_field_group_settings_tabs() as $tab_key => $tab_label
 			// instruction_placement
 			acf_render_field_wrap(
 				array(
-					'label'        => __( 'Instruction Placement', 'acf' ),
+					'label'        => __( 'Instruction placement', 'acf' ),
 					'instructions' => '',
 					'type'         => 'button_group',
 					'name'         => 'instruction_placement',
@@ -283,7 +268,7 @@ do_action( 'acf/render_field_group_settings', $field_group );
 ?>
 
 <div class="acf-hidden">
-	<input type="hidden" name="acf_field_group[key]" value="<?php echo esc_attr( $field_group['key'] ); ?>" />
+	<input type="hidden" name="acf_field_group[key]" value="<?php echo $field_group['key']; ?>" />
 </div>
 <script type="text/javascript">
 if( typeof acf !== 'undefined' ) {
